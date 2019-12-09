@@ -1,5 +1,46 @@
+# server
 server:
   port: 8081
+
+# 数据源
+spring:
+  datasource:
+    ds1:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:mysql://localhost:3306/zc_station?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&serverTimezone=Asia/Shanghai
+      username: root
+      password: Zp18716331455
+      druid:
+        initial-size: 2
+        min-idle: 2
+        max-active: 5
+        max-wait: 60000
+        time-between-eviction-runs-millis: 60000
+        min-evictable-idle-time-millis: 60000
+        test-while-idle: true
+        test-on-borrow: false
+        test-on-return: false
+        pool-prepared-statements: true
+        max-pool-prepared-statement-per-connection-size: 20
+        use-global-data-source-stat: true
+    ds2:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:mysql://localhost:3306/zc_station?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&serverTimezone=Asia/Shanghai
+      username: root
+      password: Zp18716331455
+      druid:
+        initial-size: 2
+        min-idle: 2
+        max-active: 5
+        max-wait: 60000
+        time-between-eviction-runs-millis: 60000
+        min-evictable-idle-time-millis: 60000
+        test-while-idle: true
+        test-on-borrow: false
+        test-on-return: false
+        pool-prepared-statements: true
+        max-pool-prepared-statement-per-connection-size: 20
+        use-global-data-source-stat: true
 
 
 # 自定义配置
