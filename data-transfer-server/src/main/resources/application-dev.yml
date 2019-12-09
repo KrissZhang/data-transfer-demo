@@ -48,6 +48,11 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL57InnoDBDialect
 
+# 日志
+logging:
+  config: classpath:logging-config.xml
+  path: /datatransferserverlog
+
 
 # 自定义配置
 custom:
