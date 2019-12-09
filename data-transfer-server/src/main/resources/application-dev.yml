@@ -1,2 +1,7 @@
 server:
   port: 8082
+
+
+# 自定义配置
+custom:
+  appName: "data-transfer-server"
