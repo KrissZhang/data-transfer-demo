@@ -2,7 +2,7 @@
 server:
   port: 8082
 
-# 数据源
+# Spring配置
 spring:
   datasource:
     ds1:
@@ -47,6 +47,27 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL57InnoDBDialect
+  quartz:
+    Properties:
+      org:
+        quartz:
+          scheduler:
+            instanceName: clusteredScheduler
+            instanceId: AUTO
+          jobStore:
+            class: org.quartz.impl.jdbcjobstore.JobStoreTX
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+            tablePrefix: QRTZ_
+            isClustered: true
+            clusterCheckinInterval: 10000
+            useProperties: false
+          threadPool:
+            class: org.quartz.simpl.SimpleThreadPool
+            threadCount: 10
+            threadPriority: 5
+            threadsInheritContextClassLoaderOfInitializingThread: true
+    # 数据库方式
+    job-store-type: jdbc
 
 # 日志
 logging:
