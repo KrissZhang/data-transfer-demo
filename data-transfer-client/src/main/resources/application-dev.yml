@@ -2,7 +2,7 @@
 server:
   port: 8081
 
-# Êı¾İÔ´
+# æ•°æ®æº
 spring:
   datasource:
     ds1:
@@ -48,12 +48,12 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL57InnoDBDialect
 
-# ÈÕÖ¾
+# æ—¥å¿—
 logging:
   config: classpath:logging-config.xml
   path: /datatransferclientlog
 
 
-# ×Ô¶¨ÒåÅäÖÃ
+# è‡ªå®šä¹‰é…ç½®
 custom:
   appName: "data-transfer-client"
