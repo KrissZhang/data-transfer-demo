@@ -8,7 +8,6 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.self</groupId>
     <artifactId>data-transfer-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>data-transfer-server</name>
