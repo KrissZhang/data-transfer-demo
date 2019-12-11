@@ -27,7 +27,7 @@ public class Base64Util {
         }
 
         //转储文件路径
-        String filePath = fileDir + "/" + fileName;
+        String filePath = fileDir + File.separator + fileName;
         Base64 base64 = new Base64();
 
         try{
