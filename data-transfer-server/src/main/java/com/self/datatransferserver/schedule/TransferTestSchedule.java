@@ -5,14 +5,12 @@ import com.self.datatransferserver.schedule.service.QuartzJobService;
 import com.self.datatransferserver.schedule.task.TaskBuilder;
 import org.quartz.JobKey;
 import org.quartz.SchedulerException;
-import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
 /**
  * 数据传输测试定时任务
  */
-@Service
 public class TransferTestSchedule {
 
     @Resource
