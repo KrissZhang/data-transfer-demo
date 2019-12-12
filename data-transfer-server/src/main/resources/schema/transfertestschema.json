@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "TRANSFER_TEST_SCHEMA",
+  "description": "数据传输测试json schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "key1",
+      "value1"
+    ],
+    "properties": {
+      "id": {
+        "type": "integer",
+        "description": "主键id"
+      },
+      "key1": {
+        "type": "string",
+        "description": "key1"
+      },
+      "value1": {
+        "type": "string",
+        "description": "value1"
+      }
+    }
+  }
+}
