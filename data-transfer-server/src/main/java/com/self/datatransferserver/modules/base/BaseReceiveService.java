@@ -36,7 +36,7 @@ public abstract class BaseReceiveService implements IBinFileReceiveService {
 
             return re;
         } catch (Exception e) {
-            log.error("[{}]请求异常", serviceName, e);
+            log.error("[{}]请求异常", serviceName);
             return ApiResult.result(ResponseStatusEnum.SYS_REQUEST_ERROR, "请求异常：" + e.getMessage(), null);
         }
     }

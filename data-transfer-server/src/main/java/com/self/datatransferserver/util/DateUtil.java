@@ -45,7 +45,7 @@ public class DateUtil {
             try {
                 result = sdf.parse(date);
             } catch (ParseException e) {
-                log.error("日期转换失败", e);
+                log.error("日期转换失败");
             }
         }
 

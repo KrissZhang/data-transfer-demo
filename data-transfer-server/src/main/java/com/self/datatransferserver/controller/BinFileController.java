@@ -58,7 +58,7 @@ public class BinFileController {
                 return ApiResult.result(ResponseStatusEnum.SYS_API_ERROR, "参数错误，未找到指定的服务", null);
             }
         }catch(Exception e){
-            log.error("binFile请求异常", e);
+            log.error("binFile请求异常");
             return ApiResult.result(ResponseStatusEnum.SYS_API_ERROR, e.getMessage(), null);
         }
 

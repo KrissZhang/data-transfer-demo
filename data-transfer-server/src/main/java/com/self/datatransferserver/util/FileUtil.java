@@ -78,7 +78,7 @@ public class FileUtil {
             //创建新的文件
             Files.createFile(filePath);
         } catch (IOException e) {
-            log.error("创建文件异常", e);
+            log.error("创建文件异常");
             return false;
         }
 
@@ -104,7 +104,7 @@ public class FileUtil {
             }
 
         } catch (IOException e) {
-            log.error("创建文件异常", e);
+            log.error("创建文件异常");
             return false;
         }
 
@@ -125,7 +125,7 @@ public class FileUtil {
         try {
             Files.write(filePath, data, StandardOpenOption.CREATE, StandardOpenOption.APPEND, StandardOpenOption.SYNC);
         } catch (IOException e) {
-            log.error("创建或追加文件异常", e);
+            log.error("创建或追加文件异常");
             return false;
         }
 
@@ -143,7 +143,7 @@ public class FileUtil {
         try {
             bytes = Files.readAllBytes(filePath);
         } catch (IOException e) {
-            log.error("读取文件异常", e);
+            log.error("读取文件异常");
             return bytes;
         }
 
@@ -162,7 +162,7 @@ public class FileUtil {
         try {
             list = Files.readAllLines(filePath, charset);
         } catch (IOException e) {
-            log.error("读取文件异常", e);
+            log.error("读取文件异常");
             return list;
         }
 
@@ -180,7 +180,7 @@ public class FileUtil {
         try {
             result = Files.deleteIfExists(filePath);
         } catch (IOException e) {
-            log.error("删除文件失败", e);
+            log.error("删除文件失败");
         }
 
         return result;
