@@ -2,6 +2,7 @@ package com.self.datatransferserver.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /**
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Component;
  */
 @Data
 @Component
+@Scope("singleton")
 @ConfigurationProperties(prefix = "custom")
 public class CustomProperties {
 

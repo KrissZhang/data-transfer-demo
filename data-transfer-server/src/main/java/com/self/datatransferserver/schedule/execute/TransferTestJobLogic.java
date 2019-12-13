@@ -20,7 +20,7 @@ public class TransferTestJobLogic implements Job {
      */
     @Override
     public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
-        System.out.println("执行了!!!");
+        System.out.println("执行服务端定时任务！！！");
     }
 
 }
