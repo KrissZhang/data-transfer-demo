@@ -80,6 +80,7 @@ custom:
   appName: "data-transfer-client"
   schemaPath: "schema"
   dirRoot: "/transfertest"
+  dirTemp: "/temp"
   dirUpload: "/upload"
   dirUploadSuccess: "/uploadsuccess"
   dataMaxSize: 100

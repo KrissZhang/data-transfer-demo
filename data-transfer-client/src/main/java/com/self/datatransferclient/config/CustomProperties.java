@@ -2,6 +2,7 @@ package com.self.datatransferclient.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /**
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Component;
  */
 @Data
 @Component
+@Scope("singleton")
 @ConfigurationProperties(prefix = "custom")
 public class CustomProperties {
 
@@ -26,6 +28,11 @@ public class CustomProperties {
      * 文件根目录
      */
     private String dirRoot;
+
+    /**
+     * 文件临时接收目录
+     */
+    private String dirTemp;
 
     /**
      * 文件待上传目录

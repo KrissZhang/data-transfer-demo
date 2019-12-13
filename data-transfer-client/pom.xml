@@ -23,6 +23,13 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!-- dongliu -->
+        <dependency>
+            <groupId>net.dongliu</groupId>
+            <artifactId>requests</artifactId>
+            <version>5.0.7</version>
+        </dependency>
+
         <!-- jdbc -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

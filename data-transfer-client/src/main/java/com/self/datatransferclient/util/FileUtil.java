@@ -16,6 +16,11 @@ import java.util.List;
 public class FileUtil {
 
     /**
+     * 锁
+     */
+    private static Object lock = new Object();
+
+    /**
      * 移动文件至目标目录
      * @param filePath 文件路径
      * @param targetDir 目标路径
@@ -61,6 +66,27 @@ public class FileUtil {
         }
 
         return true;
+    }
+
+    /**
+     * 创建文件夹
+     * @param targetDir 目标目录
+     */
+    public static void mkdirs(Path targetDir){
+        File file = targetDir.toFile();
+
+        if(!file.exists() || !file.isDirectory()){
+            synchronized (lock){
+                if(file.exists() && file.isDirectory()){
+                    return;
+                }
+
+                boolean result = file.mkdirs();
+                if(!result){
+                    throw new RuntimeException("创建文件夹：" + targetDir.toString() + " 失败");
+                }
+            }
+        }
     }
 
     /**
