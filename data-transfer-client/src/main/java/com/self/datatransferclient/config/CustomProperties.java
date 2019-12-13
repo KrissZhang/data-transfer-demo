@@ -17,4 +17,9 @@ public class CustomProperties {
      */
     private String appName;
 
+    /**
+     * schema文件根路径
+     */
+    private String schemaPath;
+
 }

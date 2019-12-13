@@ -10,4 +10,19 @@ public final class Constant {
      */
     public static final String STR_EMPTY = "";
 
+    /**
+     * temp文件名后缀
+     */
+    public static final String FILE_TEMP_SUFFIX = ".temp";
+
+    /**
+     * json文件名后缀
+     */
+    public static final String FILE_JSON_SUFFIX = ".json";
+
+    /**
+     * zip文件名后缀
+     */
+    public static final String FILE_ZIP_SUFFIX = ".zip";
+
 }
