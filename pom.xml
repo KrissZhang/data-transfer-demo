@@ -22,6 +22,7 @@
     <modules>
         <module>data-transfer-client</module>
         <module>data-transfer-server</module>
+        <module>resources-upload</module>
     </modules>
 
     <dependencies>
