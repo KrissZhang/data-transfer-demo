@@ -79,7 +79,7 @@ logging:
 custom:
   appName: "data-transfer-client"
   schemaPath: "schema"
-  dirRoot: "/transfertest"
+  dirRoot: "/transfertest/client"
   dirTemp: "/temp"
   dirUpload: "/upload"
   dirUploadSuccess: "/uploadsuccess"

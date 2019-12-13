@@ -24,4 +24,19 @@ public class CustomProperties {
      */
     private String schemaPath;
 
+    /**
+     * 文件根目录
+     */
+    private String dirRoot;
+
+    /**
+     * 文件临时接收目录
+     */
+    private String dirTemp;
+
+    /**
+     * 文件保存成功目录
+     */
+    private String dirSaveSuccess;
+
 }

@@ -79,3 +79,6 @@ logging:
 custom:
   appName: "data-transfer-server"
   schemaPath: "schema"
+  dirRoot: "/transfertest/server"
+  dirTemp: "/temp"
+  dirSaveSuccess: "/savesuccess"
