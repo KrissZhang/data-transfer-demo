@@ -1,23 +1,27 @@
 package com.self.datatransferclient.schedule;
 
-import com.self.datatransferclient.schedule.execute.TransferTestJobLogic;
+import com.self.datatransferclient.schedule.execute.CommonUploadJobLogic;
 import com.self.datatransferclient.schedule.service.QuartzJobService;
 import com.self.datatransferclient.schedule.task.TaskBuilder;
 import org.quartz.JobKey;
 import org.quartz.SchedulerException;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
 /**
- * 数据传输测试定时任务
+ * 通用上传文件定时任务
  */
-public class TransferTestSchedule {
+@Component
+@Scope("singleton")
+public class CommonUploadSchedule {
 
     @Resource
     private QuartzJobService quartzJobService;
 
     //初始化JobKey
-    private final JobKey jobKey = JobKey.jobKey("TransferTest", "Group1");
+    private final JobKey jobKey = JobKey.jobKey("CommonUploadJob", "CommonGroup");
 
     /**
      * 启动任务
@@ -28,13 +32,13 @@ public class TransferTestSchedule {
         TaskBuilder task = TaskBuilder.builder()
                 .jobKey(jobKey)
                 .cronExpression("0 */1 * * * ?")
-                .jobClass(TransferTestJobLogic.class)
-                .description("数据传输测试任务")
+                .jobClass(CommonUploadJobLogic.class)
+                .description("通用上传文件任务")
                 .build();
 
         quartzJobService.scheduleJob(task);
 
-        return "start transfer test job success";
+        return "start common upload job success";
     }
 
     /**
@@ -45,7 +49,7 @@ public class TransferTestSchedule {
     public String pauseTransferTestJob() throws SchedulerException {
         quartzJobService.pauseJob(jobKey);
 
-        return "pause transfer test job success";
+        return "pause common upload job success";
     }
 
     /**
@@ -56,7 +60,7 @@ public class TransferTestSchedule {
     public String resumeTransferTestJob() throws SchedulerException {
         quartzJobService.resumeJob(jobKey);
 
-        return "resume transfer test job success";
+        return "resume common upload job success";
     }
 
     /**
@@ -67,7 +71,7 @@ public class TransferTestSchedule {
     public String deleteTransferTestJob() throws SchedulerException {
         quartzJobService.deleteJob(jobKey);
 
-        return "delete transfer test job success";
+        return "delete common upload job success";
     }
 
     /**
@@ -78,14 +82,14 @@ public class TransferTestSchedule {
         TaskBuilder modifyCronTask = TaskBuilder.builder()
                 .jobKey(jobKey)
                 .cronExpression("0 */2 * * * ?")
-                .jobClass(TransferTestJobLogic.class)
-                .description("数据传输测试任务")
+                .jobClass(CommonUploadJobLogic.class)
+                .description("通用上传文件任务")
                 .build();
 
         if(quartzJobService.modifyJobCron(modifyCronTask)){
-            return "modify transfer test job success";
+            return "modify common upload job success";
         }else {
-            return "modify transfer test job fail";
+            return "modify common upload job fail";
         }
     }
 

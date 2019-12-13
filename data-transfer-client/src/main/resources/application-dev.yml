@@ -79,3 +79,9 @@ logging:
 custom:
   appName: "data-transfer-client"
   schemaPath: "schema"
+  dirRoot: "/transfertest"
+  dirUpload: "/upload"
+  dirUploadSuccess: "/uploadsuccess"
+  dataMaxSize: 100
+  clientSender: "admin"
+  reqServerAddr: "http://localhost:8082"

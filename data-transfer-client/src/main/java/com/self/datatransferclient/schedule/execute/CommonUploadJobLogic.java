@@ -11,7 +11,7 @@ import org.quartz.JobExecutionException;
  */
 @Slf4j
 @DisallowConcurrentExecution
-public class TransferTestJobLogic implements Job {
+public class CommonUploadJobLogic implements Job {
 
     /**
      * 定时任务逻辑实现
@@ -20,6 +20,7 @@ public class TransferTestJobLogic implements Job {
      */
     @Override
     public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
+        //TODO
         System.out.println("执行了!!!");
     }
 
