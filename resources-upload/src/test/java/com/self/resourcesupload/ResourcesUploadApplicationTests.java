@@ -10,7 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.HashMap;
 import java.util.Map;
 
 @SpringBootTest
@@ -21,13 +20,7 @@ class ResourcesUploadApplicationTests {
 
     @Test
     void contextLoads() throws IOException {
-        Map<String, Object> paramMap = new HashMap<>();
-        paramMap.put("endpoint", customProperties.getEndpoint());
-        paramMap.put("accessKeyId", customProperties.getAccessKeyId());
-        paramMap.put("accessKeySecret", customProperties.getAccessKeySecret());
-        paramMap.put("bucketName", customProperties.getBucketName());
-        paramMap.put("stealToken", customProperties.isStealToken());
-
+        Map<String, Object> paramMap = customProperties.getOssParamMap();
         BaseUploadFactory.init("OSS", paramMap);
         UploadService service = BaseUploadFactory.getInstance();
 
