@@ -5,4 +5,4 @@ custom:
   accessKeyId: "LTAIBaf4WbAOQ5Qb"
   accessKeySecret: "gaqdJsHigPcYicKPwJ8GxynnZqYiso"
   bucketName: "zpsbucket"
-  stealToken: false
+  stealToken: true

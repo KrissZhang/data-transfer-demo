@@ -42,7 +42,11 @@ class ResourcesUploadApplicationTests {
         //Path downloadPath = Paths.get("C:\\pic\\" + arr[1] + ".jpg");
         //service.download(downloadPath, arr);
 
-
+        //获取下载连接
+        //String[] arr = new String[2];
+        //arr[0] = "zpsbucket";
+        //arr[1] = "050b406079894125ae91f5f898128a86";
+        //String downloadUrl = service.getDownloadUrl(arr[0], arr[1]);
     }
 
 }
