@@ -47,6 +47,12 @@ class ResourcesUploadApplicationTests {
         //arr[0] = "zpsbucket";
         //arr[1] = "050b406079894125ae91f5f898128a86";
         //String downloadUrl = service.getDownloadUrl(arr[0], arr[1]);
+
+        //删除上传文件
+        //String[] arr = new String[2];
+        //arr[0] = "zpsbucket";
+        //arr[1] = "050b406079894125ae91f5f898128a86";
+        //service.deleteFile(arr[0], arr[1]);
     }
 
 }
