@@ -1,32 +1,34 @@
 package com.self.resourcesupload;
 
 import com.self.resourcesupload.base.BaseUploadFactory;
-import com.self.resourcesupload.config.CustomProperties;
 import com.self.resourcesupload.service.UploadService;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashMap;
 import java.util.Map;
 
 @SpringBootTest
 class ResourcesUploadApplicationTests {
 
-    @Autowired
-    private CustomProperties customProperties;
-
     @Test
     void contextLoads() throws IOException {
-        Map<String, Object> paramMap = customProperties.getOssParamMap();
+        Map<String, Object> paramMap = new HashMap<>();
+        paramMap.put("endpoint", "http://oss-cn-chengdu.aliyuncs.com");
+        paramMap.put("accessKeyId", "LTAIBaf4WbAOQ5Qb");
+        paramMap.put("accessKeySecret", "gaqdJsHigPcYicKPwJ8GxynnZqYiso");
+        paramMap.put("bucketName", "zpsbucket");
+        paramMap.put("stealToken", true);
+
         BaseUploadFactory.init("OSS", paramMap);
         UploadService service = BaseUploadFactory.getInstance();
 
         //文件上传
-        //File file = new File("C:\\pic\\front\\20190926205958.jpg");
-        //service.upload(file, new String[0]);
+        File file = new File("C:\\pic\\front\\20190926205958.jpg");
+        service.upload(file, new String[0]);
 
         //文件下载
         //String[] arr = new String[2];
