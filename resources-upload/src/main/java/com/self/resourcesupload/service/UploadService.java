@@ -1,5 +1,6 @@
 package com.self.resourcesupload.service;
 
+import java.io.File;
 import java.util.Map;
 
 /**
@@ -9,11 +10,11 @@ public interface UploadService {
 
     /**
      * 上传文件
-     * @param fileContent 文件内容
+     * @param file 上传文件
      * @param extParam 扩展参数
      * @return 上传返回信息
      */
-    Map upload(byte[] fileContent, String...extParam);
+    Map upload(File file, String...extParam);
 
     /**
      * 下载文件

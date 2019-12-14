@@ -7,7 +7,7 @@ import com.aliyun.oss.model.GeneratePresignedUrlRequest;
 import com.aliyun.oss.model.OSSObject;
 import com.self.resourcesupload.service.UploadService;
 
-import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -59,17 +59,17 @@ public class OssUploadServiceImpl implements UploadService {
 
     /**
      * 文件上传
-     * @param fileContent 文件内容
+     * @param file 上传文件
      * @param extParam 扩展参数
      * @return 上传返回参数
      */
     @Override
-    public Map upload(byte[] fileContent, String... extParam) {
+    public Map upload(File file, String... extParam) {
         Map<String, Object> resultMap = new HashMap<>();
         String uid = UUID.randomUUID().toString().replace("-", "");
 
         try {
-            ossClient.putObject(this.bucketName, uid, new ByteArrayInputStream(fileContent));
+            ossClient.putObject(this.bucketName, uid, file);
         }catch (Exception e){
             throw new RuntimeException("文件上传失败");
         }
