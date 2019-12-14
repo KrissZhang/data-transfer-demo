@@ -23,6 +23,13 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!-- resources-upload -->
+        <dependency>
+            <groupId>com.self</groupId>
+            <artifactId>resources-upload</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
         <!-- dongliu -->
         <dependency>
             <groupId>net.dongliu</groupId>
