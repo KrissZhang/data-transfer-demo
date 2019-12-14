@@ -39,4 +39,29 @@ public class CustomProperties {
      */
     private String dirSaveSuccess;
 
+    /**
+     * 地域节点
+     */
+    private String endPoint;
+
+    /**
+     * accessKeyId
+     */
+    private String accessKeyId;
+
+    /**
+     * accessKeySecret
+     */
+    private String accessKeySecret;
+
+    /**
+     * bucketName
+     */
+    private String bucketName;
+
+    /**
+     * 是否防盗链
+     */
+    private boolean stealToken;
+
 }
