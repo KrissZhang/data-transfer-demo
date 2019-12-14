@@ -1,1 +1,8 @@
-
+# 自定义配置
+custom:
+  appName: "resources-upload"
+  endpoint: "http://oss-cn-chengdu.aliyuncs.com"
+  accessKeyId: "LTAIBaf4WbAOQ5Qb"
+  accessKeySecret: "gaqdJsHigPcYicKPwJ8GxynnZqYiso"
+  bucketName: "zpsbucket"
+  stealToken: false
