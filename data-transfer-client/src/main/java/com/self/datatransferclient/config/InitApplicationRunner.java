@@ -18,6 +18,7 @@ public class InitApplicationRunner implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         //启动定时任务向服务器上传文件
+        commonUploadSchedule.deleteTransferTestJob();
         commonUploadSchedule.startTransferTestJob();
 
         System.out.println("启动成功");
