@@ -8,9 +8,11 @@ import com.aliyun.oss.model.OSSObject;
 import com.self.resourcesupload.service.UploadService;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.nio.file.Path;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -80,23 +82,25 @@ public class OssUploadServiceImpl implements UploadService {
 
     /**
      * 文件下载
+     * @param downloadPath 文件下载路径
      * @param fileInfo 文件信息(fileInfo[0]--bucketName,fileInfo[1]--fileKey)
-     * @return 下载文件字节数组
      */
     @Override
-    public byte[] download(String...fileInfo) {
+    public void download(Path downloadPath, String...fileInfo) {
         OSSObject oSSObject = ossClient.getObject(fileInfo[0], fileInfo[1]);
         InputStream objectContent = oSSObject.getObjectContent();
 
         try {
-            if(objectContent.available() == 0){
-                return new byte[0];
+            int num;
+            byte[] bytes = new byte[1024];
+            FileOutputStream fos = new FileOutputStream(downloadPath.toString());
+            while ((num = objectContent.read(bytes)) != -1){
+                fos.write(bytes, 0, num);
+                fos.flush();
             }
 
-            byte[] data = new byte[objectContent.available()];
-            objectContent.read(data);
+            fos.close();
             objectContent.close();
-            return data;
         } catch (IOException e) {
             throw new RuntimeException("文件下载失败");
         }

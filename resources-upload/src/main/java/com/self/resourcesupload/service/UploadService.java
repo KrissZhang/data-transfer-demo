@@ -1,6 +1,7 @@
 package com.self.resourcesupload.service;
 
 import java.io.File;
+import java.nio.file.Path;
 import java.util.Map;
 
 /**
@@ -18,10 +19,10 @@ public interface UploadService {
 
     /**
      * 下载文件
+     * @param downloadPath 文件下载路径
      * @param fileInfo 文件信息
-     * @return 下载文件字节数组
      */
-    byte[] download(String...fileInfo);
+    void download(Path downloadPath, String...fileInfo);
 
     /**
      * 删除文件
