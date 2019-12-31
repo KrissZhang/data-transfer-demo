@@ -43,13 +43,13 @@ public class ZipUtil {
                 fis.close();
             }
         } catch (IOException e) {
-            log.error("压缩文件失败");
+            log.error("压缩文件失败: {}", e);
         }finally {
             if(zos != null){
                 try {
                     zos.close();
                 } catch (IOException e) {
-                    log.error("Zip输出流关闭失败");
+                    log.error("Zip输出流关闭失败: {}", e);
                 }
             }
         }
