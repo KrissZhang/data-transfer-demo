@@ -48,7 +48,7 @@ public class Base64Util {
             out.flush();
             out.close();
         }catch (Exception e){
-            log.error("文件保存错误");
+            log.error("文件保存错误: {}", e);
             return "文件保存错误";
         }
 
@@ -83,13 +83,13 @@ public class Base64Util {
                 base64Str = encoder.encode(bytes);
             }
         }catch (Exception e){
-            log.error("文件转换异常");
+            log.error("文件转换异常: {}", e);
         }finally {
             if(fis != null){
                 try {
                     fis.close();
                 } catch (IOException e) {
-                    log.error(e.getMessage());
+                    log.error("关闭流异常: {}", e);
                 }
             }
         }
