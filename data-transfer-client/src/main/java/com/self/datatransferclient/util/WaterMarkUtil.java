@@ -77,7 +77,7 @@ public class WaterMarkUtil {
             fos.flush();
             fos.close();
         } catch (IOException e) {
-            log.error("添加水印失败");
+            log.error("添加水印失败: {}", e);
         }
     }
 
