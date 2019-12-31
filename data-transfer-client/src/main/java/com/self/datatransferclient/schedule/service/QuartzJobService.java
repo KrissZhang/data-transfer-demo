@@ -108,7 +108,7 @@ public class QuartzJobService {
             }
 
         }catch (SchedulerException e){
-            log.error("修改cron表达式失败", e);
+            log.error("修改cron表达式失败: {}", e);
             return false;
         }
 
