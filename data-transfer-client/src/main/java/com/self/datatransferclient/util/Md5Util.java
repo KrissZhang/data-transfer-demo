@@ -37,7 +37,7 @@ public class Md5Util {
             byte[] array = md.digest(bytes);
             return byteArrayToHex(array);
         } catch (NoSuchAlgorithmException e) {
-            log.error("md5编码异常");
+            log.error("md5编码异常: {}", e);
             throw new RuntimeException(e);
         }
     }
