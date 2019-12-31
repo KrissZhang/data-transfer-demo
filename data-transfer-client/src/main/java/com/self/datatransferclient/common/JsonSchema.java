@@ -52,7 +52,7 @@ public class JsonSchema {
 
             schemaJsonNode = new JsonNodeReader().fromReader(new FileReader(Paths.get(schemaFilePath).toFile()));
         } catch (IOException e) {
-            log.error("json校验异常");
+            log.error("json校验异常：{}", e);
             return false;
         }
 
