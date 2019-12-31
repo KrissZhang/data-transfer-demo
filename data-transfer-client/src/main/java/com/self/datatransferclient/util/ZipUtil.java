@@ -103,7 +103,7 @@ public class ZipUtil {
                 is.close();
             }
         } catch (IOException e) {
-            log.error("解压缩文件异常");
+            log.error("解压缩文件异常: {}", e);
         }
     }
 
