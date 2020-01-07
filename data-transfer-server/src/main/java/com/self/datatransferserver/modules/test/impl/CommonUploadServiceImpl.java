@@ -2,6 +2,7 @@ package com.self.datatransferserver.modules.test.impl;
 
 import com.self.datatransferserver.common.ApiResult;
 import com.self.datatransferserver.config.CustomProperties;
+import com.self.datatransferserver.constant.Constant;
 import com.self.datatransferserver.enums.ResponseStatusEnum;
 import com.self.datatransferserver.enums.ServiceType;
 import com.self.datatransferserver.modules.base.BaseReceiveService;
@@ -44,16 +45,9 @@ public class CommonUploadServiceImpl extends BaseReceiveService {
 
     @Override
     protected ApiResult validate(String sender, String fileName, ServiceType serviceType, MultipartFile multipartFile, HttpServletResponse response) {
-        //校验文件是否已经上传
-        Path saveSuccessPath = Paths.get(customProperties.getDirRoot() + customProperties.getDirSaveSuccess());
-        File[] saveFiles = saveSuccessPath.toFile().listFiles();
-        if(saveFiles.length > 0){
-            for (File saveFile : saveFiles) {
-                if(fileName.equalsIgnoreCase(saveFile.getName())){
-                    log.error("文件：{} 重复上传", fileName);
-                    return ApiResult.result(ResponseStatusEnum.MINISTRY_REUPLOAD);
-                }
-            }
+        //校验上传文件格式是否正确
+        if(!fileName.endsWith(Constant.FILE_JSON_SUFFIX)){
+            return ApiResult.result(ResponseStatusEnum.SYS_TYPE_FILE_ERROR);
         }
 
         return null;
