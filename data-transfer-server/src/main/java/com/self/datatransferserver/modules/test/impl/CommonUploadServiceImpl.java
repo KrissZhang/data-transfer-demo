@@ -66,11 +66,6 @@ public class CommonUploadServiceImpl extends BaseReceiveService {
             if(!receiveFile.exists()){
                 return ApiResult.result(ResponseStatusEnum.SYS_REQUEST_ERROR);
             }
-
-            //处理文件--TODO
-
-            //移动文件到保存成功目录
-            Files.move(receiveFile.toPath(), Paths.get(customProperties.getDirRoot() + customProperties.getDirSaveSuccess(), fileName));
         }catch (Exception e){
             log.error("文件：{} 上传处理异常", fileName);
             return ApiResult.result(ResponseStatusEnum.SYS_REQUEST_ERROR);
